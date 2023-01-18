@@ -4,10 +4,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 
-public class VEDEMCEOFI extends JFrame{
+public class Informatii extends JFrame{
     private JPanel panel1;
     private JRadioButton radioButton1;
     private JRadioButton afiseazaProduseleSiCategoriaRadioButton;
@@ -19,7 +17,7 @@ public class VEDEMCEOFI extends JFrame{
     private JRadioButton afiseazaSefiiDeHalaRadioButton;
     private JRadioButton afiseazaAngajatiiTineri2002RadioButton;
 
-    VEDEMCEOFI(){
+    Informatii(){
         setTitle("Altele");
         setContentPane(panel1);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

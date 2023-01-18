@@ -28,21 +28,6 @@ public class menu extends JFrame{
         setMinimumSize(new Dimension(1000, 1000));
         setVisible(true);
 
-        /*
-        JFrame frame = new JFrame("Background Image Example");
-        ImageIcon imageIcon = new ImageIcon("dog.bmp");
-        JLabel imageLabel = new JLabel(imageIcon);
-
-        adminPanel.add(imageLabel, BorderLayout.CENTER);
-        frame.setContentPane(adminPanel);
-
-        // Set the size and location of the frame
-        frame.setPreferredSize(new Dimension(400, 300));
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-
-         */
-
 
 
         adaugaProdusButton.addActionListener(new ActionListener() {
@@ -70,7 +55,7 @@ public class menu extends JFrame{
         VEDEMCEOFIButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    VEDEMCEOFI vedemceofi = new VEDEMCEOFI();
+                    Informatii informatii = new Informatii();
             }
         });
 
