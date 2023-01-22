@@ -40,11 +40,11 @@ public class AdaugareProduseGUI extends JFrame{
                     String user = "sa";
                     String pass = "557477";
                     Connection connection = DriverManager.getConnection(url, user, pass);
-                    System.out.println("Messi");
+
                     String query = " SET IDENTITY_INSERT Marfa ON\n" +
                             "INSERT INTO Marfa (id_marfa,id_furnizor, id_categorie, nume_produs, descriere, cost_stocare, cantitate, data_intrare_depozit)VALUES (?,?,?,?,?,?,?,?)";
                     PreparedStatement statement = connection.prepareStatement(query);
-                    System.out.println("Maluma");
+
                     int id_marfa = Integer.valueOf(AdaugareProduseGUI.this.idMarfaTextField.getText());
 
                     int id_furnizor = Integer.valueOf(AdaugareProduseGUI.this.idFurnizorTextField.getText());
