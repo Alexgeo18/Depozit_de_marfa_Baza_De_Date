@@ -74,15 +74,14 @@ public  class GUI_login {
         passText.setBounds(100,50,165,25);
         panel.add(passText);
 
-
-        ImageIcon loginImage = new ImageIcon("E:\\java\\Beauty-Salon-Database-master\\src\\Login.png") ;
-        buttonLogin = new JButton("Login" ,loginImage);
+        buttonLogin = new JButton("Login");
         buttonLogin.setBounds(100,100,80,25);
         buttonLogin.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 String user = userText.getText();
-                String password = passText.getText();
+                char[] passwordAsChars = passText.getPassword();
+                String password = String.valueOf(passwordAsChars);
 
 
                 if (user.equalsIgnoreCase("admin") && password.equals("admin")) {

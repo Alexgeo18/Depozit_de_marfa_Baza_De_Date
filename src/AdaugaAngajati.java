@@ -40,11 +40,11 @@ public class AdaugaAngajati extends JFrame{
                     String user = "sa";
                     String pass = "557477";
                     Connection connection = DriverManager.getConnection(url, user, pass);
-                    System.out.println("Messi");
+
                     String query = " SET IDENTITY_INSERT Angajati ON\n" +
                             "INSERT INTO Angajati (Id_angajat, Nume, Prenume, Id_hala, Data_nasterii, Sex, CNP, nr_telefon) Values (?,?,?,?,?,?,?,?)";
                     PreparedStatement statement = connection.prepareStatement(query);
-                    System.out.println("Maluma");
+
                     int id_angajat = Integer.valueOf(AdaugaAngajati.this.idAngajatField.getText());
                     String nume  = numeField.getText();
                     String prenume = prenumeField.getText();

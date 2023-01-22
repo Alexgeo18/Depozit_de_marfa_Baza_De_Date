@@ -31,7 +31,7 @@ public class Stergere extends JFrame{
         inapoiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                menu m= new menu();
+                //menu m= new menu();
                 dispose();
             }
         });
@@ -47,12 +47,16 @@ public class Stergere extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                try{
+                try( Connection connection = DriverManager.getConnection(url, user, pass)){
 
-                    Connection connection = DriverManager.getConnection(url, user, pass);
-                    String query = "DELETE FROM Marfa WHERE nume_produs = " + "'" + numeProdustextField.getText()+"'";
-                    System.out.println(query);
+
+                    //String query = "DELETE FROM Marfa WHERE nume_produs = " + "'" + numeProdustextField.getText()+"'";
+                    String query = "DELETE FROM Marfa WHERE nume_produs = ? ";
+                    //System.out.println(query);
+
+
                     PreparedStatement statement = connection.prepareStatement(query);
+                    statement.setString(1, numeProdustextField.getText());
                     statement.execute();
 
 
@@ -75,9 +79,10 @@ public class Stergere extends JFrame{
                 try{
 
                     Connection connection = DriverManager.getConnection(url, user, pass);
-                    String query = "DELETE FROM Angajat WHERE Nume = " + "'" + numeAngajatTextField.getText()+"'";
+                    String query = "DELETE FROM Angajat WHERE Nume = ?";
                     System.out.println(query);
                     PreparedStatement statement = connection.prepareStatement(query);
+                    statement.setString(1, numeAngajatTextField.getText());
                     statement.execute();
 
 
